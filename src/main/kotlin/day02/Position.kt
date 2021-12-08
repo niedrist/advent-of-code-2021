@@ -21,7 +21,7 @@ data class Position (var depth: Int = 0, var hPos: Int = 0, var aim: Int = 0) {
             aim -= c.units
     }
 
-    override fun toString(): String {
-        return (depth * hPos).toString()
+    fun getPos(): Int {
+        return depth * hPos
     }
 }

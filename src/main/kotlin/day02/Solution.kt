@@ -7,20 +7,20 @@ fun main() {
         val splitted = it.split(" ")
         Command(direction = splitted[0], units = splitted[1].toInt())
     }
-    part1(depths)
-    part2(depths)
+    println(part1(depths))
+    println(part2(depths))
 }
 
-fun part1(commands: List<Command>) {
+fun part1(commands: List<Command>): Int {
     val pos = Position()
     commands.forEach { pos.processCommand(it) }
-    println(pos)
+    return pos.getPos()
 }
 
-fun part2(commands: List<Command>) {
+fun part2(commands: List<Command>): Int {
     val pos = Position()
     commands.forEach { pos.processAimCommand(it) }
-    println(pos)
+    return pos.getPos()
 }
 
 data class Command (val direction: String, val units: Int)
