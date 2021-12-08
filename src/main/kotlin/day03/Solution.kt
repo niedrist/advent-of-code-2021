@@ -4,7 +4,7 @@ import util.FileReader
 import kotlin.math.pow
 
 fun main() {
-    val powerConsumption = FileReader.readResource("day03.txt").split("\n").toMutableList()
+    val powerConsumption = FileReader.asStrings("day03.txt").toMutableList()
     println(part1(powerConsumption))
     println(part2(powerConsumption))
 }
@@ -49,8 +49,6 @@ fun binaryStringToInt(s: String): Int {
         num += (s[i].code - 48) * 2.0.pow(s.length - 1 - i).toInt()
     return num
 }
-
-
 
 fun bitCriteria(bitsList: List<String>, index: Int, mostCommon: Boolean): Char {
     val bits0 = bitsList.count { it[index] == '0'}

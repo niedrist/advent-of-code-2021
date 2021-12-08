@@ -3,7 +3,7 @@ package day02
 import util.FileReader
 
 fun main() {
-    val depths = FileReader.readResource("day02.txt").split("\n").map {
+    val depths = FileReader.asStrings("day02.txt").map {
         val splitted = it.split(" ")
         Command(direction = splitted[0], units = splitted[1].toInt())
     }
